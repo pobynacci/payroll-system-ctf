@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Northstar Payroll | Employee Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="brand"><span class="brand-mark">N</span><span><strong>Northstar</strong><small>PAYROLL PORTAL · TRAINING ENVIRONMENT</small></span></header>
+
+    <section class="login-card" id="login-view" aria-labelledby="login-title">
+      <div class="eyebrow">EMPLOYEE ACCESS</div>
+      <h1 id="login-title">Welcome back</h1>
+      <p class="muted">Sign in to view your payroll information.</p>
+      <form id="login-form" autocomplete="off">
+        <label for="username">Username</label>
+        <input id="username" name="username" placeholder="Enter username" maxlength="50" required />
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter password" maxlength="80" required />
+        <p id="login-error" class="error" role="alert" aria-live="polite"></p>
+        <button type="submit" class="primary">Sign in →</button>
+      </form>
+      <div class="hint">CTF Hint: What information is exposed in the page's source files?</div>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard-view" aria-labelledby="dashboard-title">
+      <div class="dashboard-header">
+        <div><div class="eyebrow" id="role-label">EMPLOYEE VIEW</div><h1 id="dashboard-title">Payroll overview</h1><p class="muted" id="greeting"></p></div>
+        <button id="logout-button" class="outline" type="button">Log out</button>
+      </div>
+      <div class="stats">
+        <article class="stat"><span>Payroll period</span><strong>October 2026</strong></article>
+        <article class="stat"><span>Currency</span><strong>PHP (₱)</strong></article>
+        <article class="stat"><span>System status</span><strong class="active">Active</strong></article>
+      </div>
+      <article class="panel">
+        <h2>Payslip summary</h2>
+        <p class="muted">Sample records for demonstration only. No real employee data.</p>
+        <div class="table-scroll"><table><thead><tr><th>Employee</th><th>Pay period</th><th>Gross pay</th><th>Net pay</th></tr></thead><tbody id="payroll-rows"></tbody></table></div>
+      </article>
+      <article id="admin-panel" class="panel success hidden">
+        <div class="eyebrow">ADMIN ACCESS GRANTED</div>
+        <h2>Challenge complete!</h2>
+        <p>You found the privileged account. Submit this flag to CTFd:</p>
+        <code id="ctf-flag"></code>
+      </article>
+    </section>
+
+    <footer>© 2026 Northstar Demo Systems · Fictional payroll data · CTF training use only</footer>
+  </main>
+</body>
+</html>
